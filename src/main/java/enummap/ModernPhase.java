@@ -9,7 +9,7 @@ import static java.util.stream.Collectors.toMap;
 
 public enum ModernPhase {
 
-    SOLID, LIQUID, GAS;
+    SOLID, LIQUID, GAS, PLASMA;
 
     public enum ModernTransition {
 
@@ -18,7 +18,10 @@ public enum ModernPhase {
         BOIL(LIQUID, GAS),
         CONDENSE(GAS, LIQUID),
         SUBLIME(SOLID, GAS),
-        DEPOSIT(GAS, SOLID);
+        DEPOSIT(GAS, SOLID),
+
+        IONIZE(GAS, PLASMA),
+        DEIONIZE(PLASMA, GAS);
 
         private final ModernPhase from;
         private final ModernPhase to;

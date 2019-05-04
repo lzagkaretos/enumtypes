@@ -4,8 +4,8 @@ public class ModernChemistry {
 
     public static void main(String[] args) {
 
-        ModernPhase fromPhase = ModernPhase.LIQUID;
-        ModernPhase toPhase = ModernPhase.SOLID;
+        ModernPhase fromPhase = ModernPhase.GAS;
+        ModernPhase toPhase = ModernPhase.PLASMA;
 
         ModernPhase.ModernTransition transition =
                 ModernPhase.ModernTransition.from(fromPhase, toPhase);

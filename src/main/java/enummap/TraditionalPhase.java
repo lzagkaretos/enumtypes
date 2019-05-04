@@ -2,17 +2,18 @@ package enummap;
 
 public enum TraditionalPhase {
 
-    SOLID, LIQUID, GAS;
+    SOLID, LIQUID, GAS, PLASMA;
 
     public enum TraditionalTransition {
 
-        MELT, FREEZE, BOIL, CONDENSE, SUBLIME, DEPOSIT;
+        MELT, FREEZE, BOIL, CONDENSE, SUBLIME, DEPOSIT, IONIZE, DEIONIZE;
 
         // Rows indexed by from-ordinal, cols by to-ordinal
         private static final TraditionalTransition[][] TRANSITIONS = {
-                {null, MELT, SUBLIME},
-                {FREEZE, null, BOIL},
-                {DEPOSIT, CONDENSE, null}
+                {null, MELT, SUBLIME, null},
+                {FREEZE, null, BOIL, null},
+                {DEPOSIT, CONDENSE, null, IONIZE},
+                {null, null, DEIONIZE, null}
         };
 
         public static TraditionalTransition from(TraditionalPhase from, TraditionalPhase to) {
